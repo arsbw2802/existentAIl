@@ -1,50 +1,54 @@
-import React, { Component } from "react"
-import logo from "./logo.svg"
-import "./App.css"
+import React from "react";
+import "./App.css";
 
-class LambdaDemo extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { loading: false, msg: null }
-  }
+function App() {
+  return (
+    <>
+      <header className="header">
+        <div className="container">
+          <div className="logo">
+            <img src="/logo.png" alt="Company Logo" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-  handleClick = api => e => {
-    e.preventDefault()
+      <section id="home" className="section home">
+        <h1>Welcome to Our Company</h1>
+        <p>We provide innovative solutions that make a difference.</p>
+      </section>
 
-    this.setState({ loading: true })
-    fetch("/.netlify/functions/" + api)
-      .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }))
-  }
+      <section id="about" className="section about">
+        <h2>About Us</h2>
+        <p>
+          We are a passionate team dedicated to delivering exceptional products
+          and services. Our mission is to make technology simple and impactful
+          for everyone.
+        </p>
+      </section>
 
-  render() {
-    const { loading, msg } = this.state
+      <section id="contact" className="section contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to work with us? Reach out below.</p>
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="4"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
 
-    return (
-      <p>
-        <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
-        <button onClick={this.handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
-        <br />
-        <span>{msg}</span>
-      </p>
-    )
-  }
+      <footer>
+        <p>© 2025 My Company. All rights reserved.</p>
+      </footer>
+    </>
+  );
 }
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <LambdaDemo />
-        </header>
-      </div>
-    )
-  }
-}
-
-export default App
+export default App;
