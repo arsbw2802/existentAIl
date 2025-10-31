@@ -20,17 +20,36 @@ function App() {
       </header>
 
       <section id="home" className="section home">
-        <h1>Welcome to Our Company</h1>
-        <p>We provide innovative solutions that make a difference.</p>
+        <div className="hero-content">
+          <h1>Welcome to ExistentAIl!</h1>
+        <p className="slogan">Mapping the molecular path back to health.</p>
+        <p className="description">
+        At ExistenTAIL, we’re decoding the molecular routes from illness to recovery. Our technology, <b>Recovr</b>, models how cells regain healthy function, uncovering the key drivers of biological restoration.
+      </p>
+        </div>
+        
       </section>
 
       <section id="about" className="section about">
+        <div className="about-content">
         <h2>About Us</h2>
-        <p>
-          We are a passionate team dedicated to delivering exceptional products
-          and services. Our mission is to make technology simple and impactful
-          for everyone.
-        </p>
+      <p>
+      Team ExistenTAIL was founded by researchers who met in an AI for Biology course at Georgia Tech. What began as a collaborative project predicting molecular binding within disordered protein regions evolved into a shared vision to bridge biology and AI.
+    </p>
+      <p>
+      Our founders bring diverse expertise:
+      </p>
+      <p>
+<b>Aarushi G.</b> leads biological modeling and data interpretation. <br />
+<b>Aarushi B.</b> engineers scalable systems that bring our ideas to life. <br />
+<b>Anna</b> contributes deep expertise in genetics and bioinformatics. <br />
+<b>Kason</b> designs the mathematical and machine learning foundations that guide our models.
+</p>
+      <p>
+Together, they form an interdisciplinary team committed to uncovering the molecular pathways back to health.
+      </p>
+        </div>
+      
       </section>
 
       <section id="contact" className="section contact">
